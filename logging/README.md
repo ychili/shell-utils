@@ -46,6 +46,12 @@ and numeric codes, same as defined in RFC 5424.
 The value of `prog` can be customized with the environment variable
 LOGGING_PROG. It defaults to `basename $0`.
 
+The file `logging_color.bash` contains an alternate version of
+`logging_stderr()` that works the same,
+but adds a little color to its output to make messages of higher
+severity stand out more.
+Source this file *after* `logging.bash` to enable this capability.
+
 ### logging_file
 
 `logging_file()` writes log to the file named in the environment variable
