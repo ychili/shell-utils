@@ -102,3 +102,8 @@ Quoting from the README for bashlog:
 >     my_command --with very -c -o -m -p -l -e -x -- parameters \
 >       && log debug "${prev_cmd}" \
 >       || log error "${prev_cmd};
+
+Note that DEBUG traps are not normally inherited by shell functions, command
+substitutions, and commands executed in a subshell environment unless the
+shell option `functrace` is set
+(`set -T` or `set -o functrace` will accomplish this).
