@@ -16,10 +16,12 @@ Enable one or more handler functions with a line like
 Call the function `log()` with a level name and a log message.
 For example:
 
-    log info 'My info message'
-    log warn 'My warning message'
-    log error 'My error message'
-    log debug 'My debugging message'
+``` bash
+log info 'My info message'
+log warn 'My warning message'
+log error 'My error message'
+log debug 'My debugging message'
+```
 
 ## Standard Log Handlers
 
@@ -29,12 +31,14 @@ LOGGING_HANDLERS to a numeric logging level.
 
 For example:
 
-    # Log messages of level 'warn' and above to standard error
-    LOGGING_HANDLERS[logging_stderr]=${LOGGING_SEVERITIES[warn]}
-    # Write messages of all levels to log file 
-    LOGGING_HANDLERS[logging_file]=${LOGGING_SEVERITIES[debug]}
-    # Enable syslog logging at level 'info'
-    LOGGING_HANDLERS[logging_syslog]=${LOGGING_SEVERITIES[info]}
+``` bash
+# Log messages of level 'warn' and above to standard error
+LOGGING_HANDLERS[logging_stderr]=${LOGGING_SEVERITIES[warn]}
+# Write messages of all levels to log file
+LOGGING_HANDLERS[logging_file]=${LOGGING_SEVERITIES[debug]}
+# Enable syslog logging at level 'info'
+LOGGING_HANDLERS[logging_syslog]=${LOGGING_SEVERITIES[info]}
+```
 
 The array LOGGING_SEVERITIES contains the mapping between level names
 and numeric codes, same as defined in RFC 5424.
