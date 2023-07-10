@@ -76,7 +76,7 @@ logging_syslog() {
   local cmd=( logger
               --id="${pid}" --tag="${tag}"
               --priority="${facility}.${severity}"
-              "$line" )
+              -- "$line" )
   if ! "${cmd[@]}"; then
     logging_exception "${cmd[*]}"
   fi
