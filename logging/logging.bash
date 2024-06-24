@@ -1,6 +1,7 @@
 set -uo pipefail
 
-LOGGING_SCRIPTNAME="$(basename "$0")"
+# Store the basename of sourcing script.
+LOGGING_SCRIPTNAME="${0##*/}"
 
 # Enable handlers in this array by setting the handler's name to the log level
 # its enabled for.
