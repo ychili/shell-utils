@@ -98,10 +98,11 @@ logging_file() {
     local tmp_dir="${TMPDIR:-/tmp}"
     file_path="${tmp_dir}/${LOGGING_SCRIPTNAME}.log"
   fi
-  local date_format="${LOGGING_DATE_FORMAT:-+%F %T}"
+  local date_format="${LOGGING_DATE_FORMAT:-%F %T}"
 
   local date
-  date="$(date "$date_format")"
+  # Strip leading '+' from date_format if present.
+  printf -v date "%(${date_format#+})T" -1
 
   local cmd=( printf '%s %s %s\n' "$date" "$level_name" "$line" )
   if ! "${cmd[@]}" >> "$file_path"; then
