@@ -4,7 +4,7 @@ set -uo pipefail
 LOGGING_SCRIPTNAME="${0##*/}"
 
 # Enable handlers in this array by setting the handler's name to the log level
-# its enabled for.
+# it's enabled for.
 declare -A LOGGING_HANDLERS
 
 declare -A LOGGING_SEVERITIES=(
