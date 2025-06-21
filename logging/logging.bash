@@ -31,7 +31,7 @@ declare -a LOGGING_DISPLAY_NAMES=(
 )
 
 logging_exception() {
-  printf "Logging Exception: %s\n" "$*" >&2
+  printf 'Logging Exception: %s\n' "$*" >&2
 }
 
 # function log (level, message, ...)
